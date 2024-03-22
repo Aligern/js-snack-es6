@@ -1,72 +1,33 @@
 /* 
 snack 1
 */
-const vipTable = [ 
-    {
-        tableName: 'table: Johnson',
-        guestName: 'Brad Pitt',
-        place: '1'
-},
-{
-    tableName: 'table: Johnson',
-    guestName: 'Johnny Depp',
-    place: '2'
-},
-{
-    tableName: 'table: Johnson',
-    guestName: 'Lady Gaga',
-    place: '3'
-},
-{
-    tableName: 'table: Johnson',
-    guestName: 'Cristiano Ronaldo',
-    place: '4'
-},
-{
-    tableName: 'table: Johnson',
-    guestName: 'Georgina Rodriguez',
-    place: '5'
-},
-{
-    tableName: 'table: Johnson',
-    guestName: 'Chiara Ferragni',
-    place: '6'
-},
-{
-    tableName: 'table: Johnson',
-    guestName: 'George Clooney',
-    place: '7'
-},
-{
-    tableName: 'table: Johnson',
-    guestName: 'Amal Clooney',
-    place: '8'
-},
-{
-    tableName: 'table: Johnson',
-    guestName: 'Fedez',
-    place: '9'
-},
-{
-    tableName: 'table: Johnson',
-    guestName: 'Amadeus',
-    place: '10'
-},
-{
-    tableName: 'table: Johnson',
-    guestName: 'Fiorello',
-    place: '11'
-}
+let tableName = 'Tavolo Vip';
+let inviteList = [ 
+'Brad Pitt', 
+'Johnny Depp', 
+'Lady Gaga', 
+'Cristiano Ronaldo', 
+'Georgina Rodriguez', 
+'Chiara Ferragni',  
+'George Clooney', 
+'Amal Clooney', 
+'Fedez', 
+'Amadeus', 
+'Fiorello'
 ];
 
-for (let key of vipTable){
-    console.log(key.tableName,key.guestName,key.place);
-};
+let placeholder = inviteList.map((guest, i) => {
+    return {
+        tableName: tableName,
+        guestName: guest,
+        place: i + 1
+    }
+});
+console.log(placeholder);
 
 /*
 Snack 2
 */
-
 const nuovaClasse = [
     {
         Id: '213',
@@ -107,3 +68,9 @@ const nuovaClasse = [
 
 let nameUppercase = nuovaClasse.map(student => student.Name.toUpperCase());
 console.log(nameUppercase);
+
+let gradesMoreThan70 = nuovaClasse.filter( student => student.Grades > 70);
+console.log(gradesMoreThan70);
+
+let gradesID = nuovaClasse.filter (student => student.Grades > 70 && student.Id > 120);
+console.log(gradesID);
