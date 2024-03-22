@@ -65,11 +65,11 @@ const nuovaClasse = [
         Grades: '84',
     },
 ];
-
+// we transform to Uppercases all the students into our array
 let nameUppercase = nuovaClasse.map(student => student.Name.toUpperCase());
 console.log(nameUppercase);
 
-let gradesMoreThan70 = nuovaClasse.filter( student => student.Grades > 70);
+let gradesMoreThan70 = nuovaClasse.filter(student => student.Grades > 70);
 console.log(gradesMoreThan70);
 
 let gradesID = nuovaClasse.filter (student => student.Grades > 70 && student.Id > 120);
