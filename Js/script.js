@@ -106,5 +106,44 @@ for (let i = 1; i < bicycles.length; i++) {
         lessWeightBike = bicycles[i];
     }
 }
-const {Name, Weight} = lessWeightBike;
+const {Name, Weight} = lessWeightBike; // destructuring here
 console.log(`La bici con peso minore è la ${Name} e pesa ${Weight}Kg.`);
+
+/* Snack 4 */
+// we have our teams array:
+let teams = [
+    {
+        TeamName: 'Inter',
+        Score: 0,
+        Foul: 0
+    },
+    {
+        TeamName: 'Juventus',
+        Score: 0,
+        Foul:  0
+    },
+    {
+        TeamName: 'Milan',
+        Score: 0,
+        Foul: 0
+    },
+    {
+        TeamName: 'Napoli',
+        Score: 0,
+        Foul: 0
+    }
+];
+// we generate random values for our teams Scores and foul:
+for (let i = 0; i < teams.length; i++) {
+    teams[i].Score = getRndInteger(0,4);
+    teams[i].Foul = getRndInteger(0,3);
+};
+// we create our new array with TeamName and Foul scores:
+let foulTeams = teams.map(({TeamName, Foul}) => ({TeamName, Foul}));
+// printing the final result on console:
+console.log(foulTeams);
+
+// randomizer function
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
