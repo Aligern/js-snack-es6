@@ -24,6 +24,7 @@ let placeholder = inviteList.map((guest, i) => {
     }
 });
 console.log(placeholder);
+
 /* Snack 2 */
 // this is our array of students objects:
 const nuovaClasse = [
@@ -72,11 +73,13 @@ console.log(gradesMoreThan70);
 // we show on console all the students with a grade value higher than 70 and an ID higher than 120:
 let gradesID = nuovaClasse.filter (student => student.Grades > 70 && student.Id > 120);
 console.log(gradesID);
+
 /* Snack 3 */
-const bicycle = [
+// this is our bikes array:
+const bicycles = [
     {
         Name: 'rossa',
-        Weight: 15, 
+        Weight: 18, 
     },
     {
         Name: 'verde',
@@ -95,4 +98,13 @@ const bicycle = [
         Weight: 12, 
     }
 ];
-
+// we initialize our lessWeightBike variable by giving it the first array object:
+let lessWeightBike = bicycles[0];
+// we use i = 1 because we already initialized our let with the first array object with [0] so we will relate to the 2nd:
+for (let i = 1; i < bicycles.length; i++) {
+    if (bicycles[i].Weight < lessWeightBike.Weight) {
+        lessWeightBike = bicycles[i];
+    }
+}
+const {Name, Weight} = lessWeightBike;
+console.log(`La bici con peso minore è la ${Name} e pesa ${Weight}Kg.`);
